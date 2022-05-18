@@ -1,0 +1,24 @@
+.flex-it {
+  display: flex;
+  gap: 5px;
+  margin-top: 20px;
+  .item {
+    cursor: pointer;
+    border: 2px solid pink;
+    border-radius: 9px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    &:hover{
+      background-color: darkcyan;
+    }
+    &.selected{
+      font-weight: bold;
+      border: 2px solid gold;
+      background-color: red;
+
+    }
+  }
+}
