@@ -1,18 +1,24 @@
 .flex-it {
   display: flex;
-  gap: 5px;
+  gap: 15px;
   margin-top: 20px;
+  flex-wrap: wrap;
   .item {
     cursor: pointer;
     border: 2px solid pink;
     border-radius: 9px;
     padding: 50px;
     display: flex;
+    width:70px;
     justify-content: center;
     justify-items: center;
     align-items: center;
     &:hover{
       background-color: darkcyan;
+    }
+    &.mark{
+      color:green;
+      background-color: tomato;
     }
     &.selected{
       font-weight: bold;

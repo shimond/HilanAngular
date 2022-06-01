@@ -1,9 +1,6 @@
+<button (click)="stam()">סתם כפתור</button>
+<app-use-service></app-use-service>
 <div class="flex-it">
-  <div class="item" *ngFor="let item of list"
-  (click)="setSelected(item)"
-  [class.selected]="item === selectedItem"
-  >{{item}}
+  <div class="item" *ngFor="let item of list" (click)="setSelected(item)" [class.mark]="item | mark">{{item}}
   </div>
 </div>
-
-

@@ -1,20 +1,13 @@
-<div>
-  <input #txt (input)="searchWord = txt.value" (blur)="doSearch()"/>
-  <!-- <button [disabled]="isBusy" (click)="doSearch()">Search</button> -->
-  <span *ngIf="isBusy">Loading...</span>
-</div>
-<app-string-list [list]="results"
-(selectItemRequested)="setSelected($event)"
-[selectedItem]="selectedWord"
+<app-search></app-search>
 
-></app-string-list>
-
-
-<h2>{{selectedWord}}</h2>
-<!--
-
-  [] = attributes
-  {{}} - inner text
-  () - events
-
--->
+<!-- <h1>Current count = {{count}}</h1>
+<button (click)="showAll = !showAll">Show/Hide</button>
+<app-counter></app-counter>
+<ng-container *ngIf="showAll">
+  <app-counter></app-counter>
+  <app-counter></app-counter>
+  <app-counter></app-counter>
+  <app-counter></app-counter>
+  <app-counter></app-counter>
+  <app-counter></app-counter>
+</ng-container> -->

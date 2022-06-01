@@ -1,0 +1,7 @@
+<input [formControl]="searchControl">
+<div>
+  <ul>
+    <li *ngFor="let item of result$ | async">
+      {{item.count}} - > {{item.value}}</li>
+  </ul>
+</div>

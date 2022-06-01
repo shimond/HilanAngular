@@ -1,3 +1,4 @@
+import { MessageService, MessageServiceMock } from './../../services/message.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -12,9 +13,14 @@ export class StringListComponent implements OnInit {
   @Input() selectedItem = '';
   @Output() selectItemRequested = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(private readonly mService: MessageService) { }
 
   ngOnInit(): void {
+  }
+
+  stam() {
+    this.mService.message('STAM');
+    // this.list[3] = 'WOW';
   }
 
   setSelected(item: string) {
