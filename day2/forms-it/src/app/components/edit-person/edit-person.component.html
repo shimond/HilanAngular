@@ -1,0 +1,68 @@
+<h1>{{getIt()}}</h1>
+<h2>Last save datetime {{lastSaveTime$ | async | date:'HH:mm:ss'}}</h2>
+
+<form [formGroup]="personForm" (ngSubmit)="save()">
+  <div>
+    <input formControlName="firstName" placeholder="Enter first name" />
+  </div>
+  <div>
+    <input formControlName="lastName" placeholder="Enter last name" />
+  </div>
+  <div>
+    <app-my-numeric formControlName="age"></app-my-numeric>
+    <!-- <input formControlName="age" placeholder="Enter Age" /> -->
+  </div>
+  <div>
+    <input formControlName="email" placeholder="Enter email here" />
+    <div *ngIf="personForm.controls['email'].errors as errors">
+      {{errors |json}}
+    </div>
+  </div>
+  <div>
+    <div>
+      <h3>Work address</h3>
+      <app-address-with-control-container groupName="workAddress"></app-address-with-control-container>
+    </div>
+    <h3>Home address</h3>
+    <app-address formControlName="homeAddress"></app-address>
+  </div>
+  <button>Save</button>
+</form>
+
+<div>
+  {{personForm.errors | json}}
+</div>
+
+<div style="display: flex; column-gap: 10px">
+  <div>
+    <h4>Person value</h4>
+    <pre>{{p | json}}</pre>
+  </div>
+  <div>
+    <h4>Form value</h4>
+    <pre>{{personForm.value | json}}</pre>
+  </div>
+
+</div>
+
+<button [disabled]="personForm.invalid" (click)="changeDisable()">Disable</button>
+
+<ul>
+  <li>
+    Valid :{{personForm.valid}}
+  </li>
+  <li>
+    dirty :{{personForm.dirty}}
+  </li>
+
+  <li>
+    enabled :{{personForm.enabled}}
+  </li>
+  <li>
+    current value :{{personForm.value | json}}
+  </li>
+  <li>
+    Pristine :{{personForm.pristine}}
+  </li>
+
+</ul>

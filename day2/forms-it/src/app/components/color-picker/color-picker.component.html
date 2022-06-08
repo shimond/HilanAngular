@@ -1,0 +1,8 @@
+<div style="display:flex; column-gap:20px">
+  <div class="color-div" [ngStyle]="{'background-color': color$ | async}"></div>
+  <div [formGroup]="colorGroup">
+    <div>R: <input formControlName="red"></div>
+    <div>G: <input formControlName="green"></div>
+    <div>B: <input formControlName="blue"></div>
+  </div>
+</div>
